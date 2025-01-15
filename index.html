@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="termo.css">
+    <title>JOGO TERMO</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="linha">
+            <div class="box" name="box1"></div>
+            <div class="box" name="box1"></div>
+            <div class="box" name="box1"></div>
+            <div class="box" name="box1"></div>
+            <div class="box" name="box1"></div>
+        </div>
+
+        <div class="linha">
+            <div class="box" name="box2"></div>
+            <div class="box" name="box2"></div>
+            <div class="box" name="box2"></div>
+            <div class="box" name="box2"></div>
+            <div class="box" name="box2"></div>
+        </div>
+
+        <div class="linha">
+            <div class="box" name="box3"></div>
+            <div class="box" name="box3"></div>
+            <div class="box" name="box3"></div>
+            <div class="box" name="box3"></div>
+            <div class="box" name="box3"></div>
+        </div>
+
+        <div class="linha">
+            <div class="box" name="box4"></div>
+            <div class="box" name="box4"></div>
+            <div class="box" name="box4"></div>
+            <div class="box" name="box4"></div>
+            <div class="box" name="box4"></div>
+        </div>
+
+        <div class="linha">
+            <div class="box" name="box5"></div>
+            <div class="box" name="box5"></div>
+            <div class="box" name="box5"></div>
+            <div class="box" name="box5"></div>
+            <div class="box" name="box5"></div>
+        </div>
+    </div>
+
+    <div class="resposta_usuario">
+        <input type="text" id="input" placeholder="Digite seu palpite">
+        <input type="button" id="botao" value="Enviar" onclick="enviar(input.value)">
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    let palavraEscolhida = "fruta";
+    let linha = 1;
+
+
+    function enviar(valor) {
+        if (valor.length !== palavraEscolhida.length) {
+            alert("Digite uma palavra que contenha 5 letras!");
+            return;
+        }
+
+       
+        let i = 0;
+        let boxs = document.getElementsByName(`box${linha}`);
+        boxs.forEach(box => {
+            if (palavraEscolhida[i] == valor[i]) box.style = "background-color: #3ca393";
+            else if (palavraEscolhida.includes(valor[i])) box.style = "background-color: #d3ab6c";
+            else box.style = "background-color: #312a2c";
+            box.innerHTML = valor[i].toUpperCase();
+            i++;
+        });
+        linha++;
+
+        if (linha > 5) {
+            alert("Fim de jogo! A palavra escolhida era: " + palavraEscolhida.toUpperCase());
+        };
+    }
+
+
+</script>
