@@ -1,5 +1,5 @@
 body{
-    background-color: #e1ede0;
+    background-color: #c6c1c821;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,11 +8,12 @@ body{
 }
 
 .container {
-    width: 40%;
-    height: 80vh;
+    width: 35%;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    gap: 10px;
 }
 
 .linha {
@@ -20,10 +21,11 @@ body{
     justify-content: space-evenly;
     width: 100%;
     height: 20%;
+    gap: 10px;
 }
 
 .box {
-    background-color: #b6b2cc ;
+    background-color: #b6b2cc;
     border-radius: 10px;
     color: white;
     width: 20%;
@@ -39,29 +41,56 @@ body{
     margin-top: 20px;
     width: 40%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #570457; 
+    font-size: 18px; 
+    font-weight: bold;
 }
 
 #input {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(87, 17, 139, 0.5);
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     outline: none;
-    border: none;
     width: 80%;
-    height: 30px;
-    color: white;
+    height: 40px;
+    color: rgb(58, 4, 67);
     text-align: center;
+    font-size: 16px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+#input:focus {
+    border-color: #3c1d46;
+    background-color: rgba(246, 246, 247, 0.4);
+    color: #000;
 }
 
 #botao {
-    background-color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #18afa3, #23bfd4);
+    border: none;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    outline: none;
-    border: none;
     width: 20%;
-    height: 32px;
+    height: 42px;
     cursor: pointer;
     color: white;
     font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(48, 4, 98, 0.2);
 }
+
+#botao:hover {
+    background: linear-gradient(135deg, #851f97, #5d105b);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(49, 6, 109, 0.3);
+}
+
+#botao:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(56, 4, 89, 0.2);
+}
+

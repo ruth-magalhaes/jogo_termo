@@ -80,9 +80,12 @@
         boxs.forEach(box => {
             if (palavraEscolhida[i] == valor[i]) box.style = "background-color: #3ca393";
             else if (palavraEscolhida.includes(valor[i])) box.style = "background-color: #d3ab6c";
-            else box.style = "background-color: #312a2c";
+            else box.style = "background-color: #3D1E5A";
             box.innerHTML = valor[i].toUpperCase();
             i++;
+
+            document.getElementById("input").value = "";
+
         });
         linha++;
 
